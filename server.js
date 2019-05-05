@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 const methodOverride = require('method-override');
 
+const userController = require('./controllers/users.js')
+app.use('/users', userController)
+
 // config
 const PORT = process.env.PORT
 const mongoURI = process.env.MONGODB_URI
