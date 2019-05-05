@@ -1,10 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const Item = require('../models/items.js');
+const express = require('express')
+const sessions = express.Router()
 
-router.get('/', (req, res) => {
-  // res.render('index.ejs')
-  res.send('hello')
-});
+sessions.get('/new', (req, res) => {
+  res.render('sessions/new.ejs')
+})
 
-module.exports = router;
+module.exports = sessions

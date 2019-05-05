@@ -7,6 +7,8 @@ const methodOverride = require('method-override');
 
 const userController = require('./controllers/users.js')
 app.use('/users', userController)
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
 
 // config
 const PORT = process.env.PORT
