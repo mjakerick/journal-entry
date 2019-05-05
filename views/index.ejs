@@ -6,16 +6,21 @@
   <body>
     <div class="container">
       <h1>
-        <% if(currentUser) { %>
-          Welcome <%=currentUser.username%>!
-        <a class="waves-effect waves-light btn" href="/sessions/">Log Out</a>
-      </h1>
-      <% } else { %>
-        <h2>Please </h2>
-        <a class="waves-effect waves-light btn" href="/users/new">Sign Up</a></h2>
-        <h3>or</h3>
-        <a class="waves-effect waves-light btn" href="/sessions/new">Log In</a>
-      <% } %>
+        <%if (currentUser) {%>
+        Welcome <%= currentUser.username%></h1>
+        <a href="/app" class="waves-effect waves-light btn">Join the party</a>
+
+
+        <form action="/sessions?_method=DELETE" method="post">
+          <input type="submit" value="Logout" class="waves-effect waves-light btn">
+        </form>
+
+        <%} else {%>
+          <h2>Please</h2>
+          <a href="/users/new" class="waves-effect waves-light btn">Sign up</a>
+          <h3>or</h3>
+          <a href="/sessions/new" class="waves-effect waves-light btn">Log In</a>
+        <%}%>
     </div>
   </body>
 </html>

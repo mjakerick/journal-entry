@@ -51,6 +51,7 @@ app.get('/app', (req, res)=>{
         res.redirect('/sessions/new');
     }
 })
+
 // Users controller - creates new users
 const userController = require('./controllers/users.js')
 app.use('/users', userController)
