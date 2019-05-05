@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:false}));
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('index route')
+  res.render('index.ejs')
 })
 
 // listen
