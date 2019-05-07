@@ -6,10 +6,10 @@
   <body>
     <h1>Edit Entry</h1>
     <form class="" action="/entries/<%=entry.id%>?_method=PUT" method="POST">
-      <input type="date" name="date" value="<%=entry.id%>">
+      <input type="text" name="date" value="<%=entry.date%>">
       <input type="text" name="title" value="<%=entry.title%>">
       <input type="text" name="entry" value="<%=entry.entry%>">
-      <input type="submit" value="Create Entry">
+      <input type="submit" value="Submit">
     </form>
   </body>
 </html>

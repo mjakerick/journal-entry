@@ -6,7 +6,7 @@
   <body>
     <h1>Create a New Entry</h1>
     <form class="" action="/entries" method="POST">
-      <input type="date" name="date" value="">
+      <input type="text" name="date" value="<%=new Date().toLocaleDateString()%>">
       <input type="text" name="title" placeholder="Title">
       <input type="text" name="entry" placeholder="Journal Entry">
       <input type="submit" value="Create Entry">
