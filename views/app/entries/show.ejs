@@ -5,14 +5,11 @@
         <title></title>
         <% include ../../public/head.ejs %>
     </head>
-    <body>
-        <h1>Entries show page</h1>
+    <body style="text-align: center;">
+        <h1><%=entry.title%></h1>
         <%=entry.date%>
-        <h3><%=entry.title%></h3>
-        <p><%=entry.entry%></p>
+        <p style="background: white; border-radius: 5px; width: 50%; left: 25%; position: relative;"><%=entry.entry%></p>
 
-        <nav>
-            <a href="/app">Back to Index</a>
-        </nav>
+        <a class="waves-effect waves-light btn" href="/app">Back to Index</a>
     </body>
 </html>

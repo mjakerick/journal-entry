@@ -7,6 +7,7 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const app = express()
 const session = require('express-session')
+const morgan = require('morgan')
 const Entry = require('./models/entries.js');
 
 // Configuration
@@ -19,6 +20,7 @@ app.use(methodOverride('_method'))
 // parses info from our input fields into an object
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(__dirname + '/views/public'));
+app.use(morgan('tiny'))
 
 // configure sessions
 // secret is stored in .env
@@ -48,7 +50,7 @@ app.get('/', (req, res) => {
 // Gets entries from database and renders them on index page
 app.get('/app', (req, res)=>{
     if(req.session.currentUser){
-      Entry.find({/*id: req.session.currentUser._id*/}, (error, allEntries) => {
+      Entry.find({userId: req.session.currentUser._id}, (error, allEntries) => {
           res.render('app/entries/index.ejs',{
               entries:allEntries
           });
@@ -56,7 +58,6 @@ app.get('/app', (req, res)=>{
     } else {
         res.redirect('/sessions/new');
     }
-    // console.log(req.session.currentUser._id);
 })
 
 app.get('/new', (req, res)=>{
@@ -64,10 +65,11 @@ app.get('/new', (req, res)=>{
 })
 
 app.get('/about', (req, res)=>{
-  res.render('app/about.ejs')
+  res.render('app/entries/about.ejs')
 })
 
 app.post('/entries', (req, res)=>{
+  req.body.userId = req.session.currentUser._id
   Entry.create(req.body, (err, createdEntry) => {
     res.redirect('/app')
   })

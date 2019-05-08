@@ -5,19 +5,22 @@
   </head>
   <body>
     <div class="container">
-      <h1>
+      <h1 style="color: white; text-shadow: 3px 3px black;">
         <%if (currentUser) {%>
         Welcome <%= currentUser.username%></h1>
         <form action="/sessions?_method=DELETE" method="post">
           <input type="submit" value="Logout" class="waves-effect waves-light btn">
         </form>
+        <h3 style="color: white; text-shadow: 3px 3px black;">Close your eyes and reflect on your day.
+        You may not know what to write about and that’s okay. Your journal can be about anything you want. A good way to begin writing is to close your eyes and think about what you’re feeling. </h3>
 
         <h2><a href="/app" class="waves-effect waves-light btn">Start Making Entries</a></h2>
 
         <%} else {%>
-          <h2>Please</h2>
+          <h2 style="color: white; text-shadow: 3px 3px black;">Welcome to the Daily Journal Entry App</h2>
+          <h2 style="color: white; text-shadow: 3px 3px black;"> Please</h2>
           <a href="/users/new" class="waves-effect waves-light btn">Sign up</a>
-          <h3>or</h3>
+          <h3 style="color: white; text-shadow: 3px 3px black;">or</h3>
           <a href="/sessions/new" class="waves-effect waves-light btn">Log In</a>
         <%}%>
     </div>
