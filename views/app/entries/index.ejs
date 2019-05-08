@@ -5,6 +5,9 @@
   </head>
   <body>
     <h1>Journal Entry Page</h1>
+    <form action="/sessions?_method=DELETE" method="post">
+      <input type="submit" value="Logout" class="waves-effect waves-light btn">
+    </form>
     <ul>
       <% for(let i = 0; i < entries.length; i++){ %>
         <li>
