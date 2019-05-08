@@ -18,6 +18,7 @@ const mongoURI = process.env.MONGODB_URI
 app.use(methodOverride('_method'))
 // parses info from our input fields into an object
 app.use(express.urlencoded({ extended: false }))
+app.use(express.static(__dirname + '/views/public'));
 
 // configure sessions
 // secret is stored in .env
@@ -47,7 +48,7 @@ app.get('/', (req, res) => {
 // Gets entries from database and renders them on index page
 app.get('/app', (req, res)=>{
     if(req.session.currentUser){
-      Entry.find({}, (error, allEntries) => {
+      Entry.find({/*id: req.session.currentUser._id*/}, (error, allEntries) => {
           res.render('app/entries/index.ejs',{
               entries:allEntries
           });
@@ -55,10 +56,15 @@ app.get('/app', (req, res)=>{
     } else {
         res.redirect('/sessions/new');
     }
+    // console.log(req.session.currentUser._id);
 })
 
 app.get('/new', (req, res)=>{
   res.render('app/entries/new.ejs')
+})
+
+app.get('/about', (req, res)=>{
+  res.render('app/about.ejs')
 })
 
 app.post('/entries', (req, res)=>{
