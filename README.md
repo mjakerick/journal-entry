@@ -14,3 +14,5 @@ This app was inspired by the idea of creating a daily journal entry to organize 
 
 ## Notes
 I spent a ridiculous amount of time figuring out how to only connect users to their specific collection of journal entry data. I finally got it to work, but I must've spent nearly two days on that.
+
+[https://journal-entry.herokuapp.com/]
