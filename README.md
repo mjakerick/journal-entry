@@ -13,7 +13,7 @@ This app was inspired by the idea of creating a daily journal entry to organize 
 - MongoDB
 
 ## Notes
-I spent a ridiculous amount of time figuring out how to connect users to their specific collection of journal entry data. I finally got it to work, but I must've spent nearly two days on that. 
-If I could change anything, I would want to improve my code organization. I think that pseudo coding would've helped me a lot here, but I was too quickly consumed by trying to solve the problem rather than taking a step back to think about it logically. Everything works, it would just be difficult for someone to go back and maintain my code in its current state. That is definitely an area I will focus on for improvement moving forward.
+- I spent a ridiculous amount of time figuring out how to connect users to their specific collection of journal entry data. I finally got it to work, but I must've spent nearly two days on that. 
+- If I could change anything, I would want to improve my code organization. I think that pseudo coding would've helped me a lot here, but I was too quickly consumed by trying to solve the problem rather than taking a step back to think about it logically. Everything works, it would just be difficult for someone to go back and maintain my code in its current state. That is definitely an area I will focus on for improvement moving forward.
 
 https://journal-entry.herokuapp.com/
